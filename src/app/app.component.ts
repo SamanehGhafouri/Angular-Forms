@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, Inject} from '@angular/core';
+import {Router} from "@angular/router";
+import {ExampleDef} from "./example.model";
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular-Forms';
+  constructor(
+    private router: Router,
+    @Inject('ExampleDefs') public examples: ExampleDef[]) {
+  }
+
 }
